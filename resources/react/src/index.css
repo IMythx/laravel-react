@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  .CollapsibleContent {
+    overflow: hidden;
+  }
+  .CollapsibleContent[data-state="open"] {
+    animation: slideDown 300ms ease-out;
+  }
+  .CollapsibleContent[data-state="closed"] {
+    animation: slideUp 300ms ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+:root {
+  --base-500: #a0aec0;
+  --base-200: #e2e8f0;
+  --base-300: #e2e8f0;
+  --base-400: #cbd5e0;
+  --main-500: #6366f1;
+  --main-400: #7f9cf5;
+  --main-200: #c3dafe;
+  --main-100: #ebf4ff;
+  --solid: #fff;
+  --solid-900: #4a5568;
+  --sidebar-bg: #edf2f7;
+  --sidebar-color: #4a5568;
+  --shadow: 0 10px 15px -3px rgba(36, 69, 101, 0.19),
+    0 4px 6px -2px rgb(208, 220, 232);
+  --shadow-active: 0 0 0 2px currentColor,
+    0 10px 15px -3px rgba(36, 69, 101, 0.19), 0 4px 6px -2px rgb(208, 220, 232);
+}
+
+.dark-mode {
+  --base-500: #718096;
+  --base-200: #2d3748;
+  --base-300: #4a5568;
+  --base-400: #4a5568;
+  --main-500: #6366f1;
+  --main-200: #4a5568;
+  --main-100: #2d3648;
+  --solid: #111827;
+  --solid-900: #d1dcec;
+  --sidebar-bg: #2e3647;
+  --sidebar-color: #fff;
+  --shadow: 0 10px 15px -3px rgb(26, 32, 45), 0 4px 6px -2px rgb(48, 58, 84);
+  --shadow-active: 0 0 0 2px currentColor, 0 10px 15px -3px rgba(0, 0, 0, 0.35),
+    0 4px 6px -2px rgb(76, 82, 90);
+}
+
+.red:not(.dark-mode) {
+  --main-200: #fed7d7;
+  --main-100: #fed7d7;
+}
+
+.red {
+  --main-500: #f56565;
+  --main-400: #fc8181;
+}
+
+.orange {
+  --main-500: #ed8936;
+  --main-400: #f6ad55;
+}
+
+.orange:not(.dark-mode) {
+  --main-200: #feebc8;
+  --main-100: #fffaf0;
+}
+
+.green {
+  --main-500: #48bb78;
+  --main-400: #68d391;
+}
+
+.green:not(.dark-mode) {
+  --main-200: #c6f6d5;
+  --main-100: #c6f6d5;
+}
+
+.yellow {
+  --main-500: #f59e0b;
+  --main-400: #fbbf24;
+}
+
+.blue {
+  --main-500: #4299e1;
+  --main-400: #63b3ed;
+}
+
+.blue:not(.dark-mode) {
+  --main-200: #bee3f8;
+  --main-100: #ebf8ff;
+}
+
+.purple {
+  --main-500: #9f7aea;
+  --main-400: #b794f4;
+}
+
+.purple:not(.dark-mode) {
+  --main-200: #e9d8fd;
+  --main-100: #faf5ff;
+}
+
+.pink {
+  --main-500: #ed64a6;
+  --main-400: #f687b3;
+}
+
+.pink:not(.dark-mode) {
+  --main-200: #fed7e2;
+  --main-100: #fff5f7;
+}
